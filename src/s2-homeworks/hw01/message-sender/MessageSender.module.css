@@ -1,6 +1,4 @@
 .sendForm {
-    border: black 1px solid;
-    /*height:100px ;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,7 +6,6 @@
 }
 
 .textarea {
-    border: #00cc22 1px solid;
     width: 976px;
     height: 40px;
     left: 70px;
@@ -39,7 +36,6 @@
     font-size: 16px;
     line-height: 20px;
     /* identical to box height */
-
 
     color: #FFFFFF;
 }
