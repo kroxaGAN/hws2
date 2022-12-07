@@ -4,6 +4,7 @@ import React, {
     ChangeEvent,
 } from 'react'
 import s from './SuperSelect.module.css'
+import {ArrType} from "../../HW7";
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
@@ -11,8 +12,8 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 >
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
+    options?: ArrType[]
+    onChangeOption?: (option: string ) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
@@ -38,10 +39,8 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         // делают студенты
         // если onChangeOption вообще существует, то...
-        if(onChangeOption){
-            onChangeOption(e.currentTarget.value)
-            console.log(`${e.currentTarget.value} 'Select'`)
-        }
+        onChange && onChange(e)
+        onChangeOption && onChangeOption(e.currentTarget.value)
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
