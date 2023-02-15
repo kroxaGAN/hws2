@@ -42,7 +42,6 @@ const HW14 = () => {
                 // делает студент
                 console.log(res)
                 // сохранить пришедшие данные
-                //@ts-ignore
                 setTechs(res.data.techs)
                 //
             })
