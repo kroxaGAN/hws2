@@ -47,6 +47,8 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
+    console.log("searchParams: "+searchParams)
+
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
@@ -68,6 +70,8 @@ const HW15 = () => {
         setCount(newCount)
 
         sendQuery({page: newPage, count: newCount})
+        setSearchParams( `page=${newPage}&count=${newCount}`)
+
 
         // setPage(
         // setCount(
@@ -84,6 +88,11 @@ const HW15 = () => {
         console.log('sort: '+newSort)
         setSort(newSort)
         setPage(1)
+
+        sendQuery({page: page, count: searchParams.get("count")})
+
+
+
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
 
