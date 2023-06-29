@@ -1,0 +1,29 @@
+.tech {
+    width: 50vw;
+}
+
+.developer {
+
+}
+
+.techHeader {
+    width: 50vw;
+}
+
+.developerHeader {
+
+}
+
+.row {
+    display: flex;
+}
+
+.rowHeader {
+    display: flex;
+}
+
+.loading {
+    color: #cc0000;
+    font-size: large;
+    font-weight: bolder;
+}
