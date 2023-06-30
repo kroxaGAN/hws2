@@ -53,9 +53,11 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+
                 // делает студент
                 // сохранить пришедшие данные
                 if (res?.data!==undefined){
+                    console.log(res.data.techs)
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
                     setLoading(false)
@@ -89,9 +91,8 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1)
 
-        sendQuery({page: page, count: searchParams.get("count")})
-
-
+        sendQuery({page: '1', count: searchParams.get("count")})
+        setSearchParams( `page=1&count=${count}`)
 
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
@@ -120,6 +121,47 @@ const HW15 = () => {
             </div>
         </div>
     ))
+
+    if (sort==='0tech'){
+        techs.sort(function(a:any, b:any){
+            let nameA=a.tech, nameB=b.tech
+            if (nameA < nameB) //сортируем строки по возрастанию
+                return -1
+            if (nameA > nameB)
+                return 1
+            return 0 // Никакой сортировки
+        })
+    }
+    if (sort==='1tech'){
+        techs.sort(function(a:any, b:any){
+            let nameA=a.tech, nameB=b.tech
+            if (nameA > nameB) //сортируем строки по убыванию
+                return -1
+            if (nameA < nameB)
+                return 1
+            return 0 // Никакой сортировки
+        })
+    }
+    if (sort==='0developer'){
+        techs.sort(function(a:any, b:any){
+            let nameA=a.developer, nameB=b.developer
+            if (nameA < nameB) //сортируем строки по возрастанию
+                return -1
+            if (nameA > nameB)
+                return 1
+            return 0 // Никакой сортировки
+        })
+    }
+    if (sort==='1developer'){
+        techs.sort(function(a:any, b:any){
+            let nameA=a.developer, nameB=b.developer
+            if (nameA > nameB) //сортируем строки по убыванию
+                return -1
+            if (nameA < nameB)
+                return 1
+            return 0 // Никакой сортировки
+        })
+    }
 
     return (
         <div id={'hw15'}>
