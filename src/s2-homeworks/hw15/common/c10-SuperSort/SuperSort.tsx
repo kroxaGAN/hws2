@@ -12,7 +12,7 @@ export type SuperSortPropsType = {
     sort: string
     value: string
     onChange: (newSort: string) => void
-    setSort?: (sort: string) => void
+    // setSort?: (sort: string) => void
 }
 
 

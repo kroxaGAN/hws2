@@ -91,8 +91,8 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1)
 
-        sendQuery({page: '1', count: searchParams.get("count")})
-        setSearchParams( `page=1&count=${count}`)
+        sendQuery({page: page, count: searchParams.get("count")})
+        setSearchParams( `page=${page}&count=${count}`)
 
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
@@ -185,7 +185,7 @@ const HW15 = () => {
                             sort={sort}
                             value={'tech'}
                             onChange={onChangeSort}
-                            setSort={setSort}
+                            // setSort={setSort}
                         />
                     </div>
 
